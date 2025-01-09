@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}Contact - Milo{% endblock %}
+
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 mx-auto">
+
+      <article class="card mb-4">
+        <header class="card-header text-center">
+          <h1 class="card-title">Get in touch</h1>
+        </header>
+        <div class="card-body">
+
+          <p><strong>Welcome to my little corner of the internet! My journey has been one of growth, curiosity, and endless learning. From early on, I found joy in exploring new ideas, whether through books, conversations, or the occasional adventurous leap into the unknown. Each step has shaped who I am today, and I’m thrilled to share my story with you.</strong></p>
+
+          <p>My life is a mix of experiences that have fueled my creativity and passion. From small victories to significant milestones, every moment has been a lesson. Writing has become my outlet—my way of connecting, reflecting, and expressing. Through this blog, I hope to inspire, learn, and grow alongside you. Thank you for being a part of my journey.</p>
+
+
+          <form method="post" action="{% url 'contact' %}">
+              {% csrf_token %}
+              <div class="mb-3">
+                  {{ form.name.label_tag }}
+                  {{ form.name }}
+              </div>
+              <div class="mb-3">
+                  {{ form.email.label_tag }}
+                  {{ form.email }}
+              </div>
+              <div class="mb-3">
+                  {{ form.phone.label_tag }}
+                  {{ form.phone }}
+              </div>
+              <div class="mb-3">
+                  {{ form.message.label_tag }}
+                  {{ form.message }}
+              </div>
+              <button type="submit" class="btn btn-success">Submit</button>
+          </form>
+        </div>
+      </article>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Search Results for "{{ query }}" - Milo{% endblock %}
+
+{% block content %}
+
+<div class="container">
+  <h2>Search Results for "{{ query }}"</h2>
+
+  <div class="row">
+    {% for post in results %}
+    <div class="col-md-4">
+      <article class="card mb-4">
+        <header class="card-header">
+          <div class="card-meta">
+            <a href="#"><time class="timeago" datetime="{{ post.created_at }}">{{ post.created_at|date:"d F Y" }}</time></a> in <a href="page-category.html">{{ post.category }}</a>
+          </div>
+          <a href="{% url 'post_detail' post.id %}">
+            <h4 class="card-title">{{ post.title }}</h4>
+          </a>
+        </header>
+        <a href="{% url 'post_detail' post.id %}">
+          <img class="card-img" src="{{ post.image.url }}" alt="{{ post.title }}" />
+        </a>
+        <div class="card-body">
+          <p class="card-text">{{ post.body|truncatewords:30 }}</p>
+        </div>
+      </article>
+    </div>
+    {% empty %}
+      <p>No results found for your search.</p>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}About - Milo{% endblock %}
+
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 mx-auto">
+
+      <article class="card mb-4">
+        <header class="card-header text-center">
+          <h1 class="card-title">Who Am I?</h1>
+        </header>
+        <div class="card-body">
+
+          <p><strong>Welcome to my journey! I’m someone who thrives on curiosity and loves exploring new ideas. From humble beginnings to exciting milestones, each chapter in my story has shaped the person I am today. I believe life is a continuous learning experience, and I’m eager to share mine with you.</strong></p>
+
+          <p>Writing has always been my passion—a way to reflect, connect, and express myself. Through this blog, I hope to share not just my experiences but also inspire you to chase your dreams, embrace challenges, and find joy in the little moments. Life’s adventures are better when shared, and I’m grateful to have you here.</p>
+
+          <img src="{% static 'img/articles/7.jpg' %}" class="img-fluid mb-3" alt="A glimpse of my world" />
+
+          <p>When I’m not writing, I enjoy immersing myself in creativity—whether that’s exploring new hobbies, meeting like-minded individuals, or simply enjoying the beauty of everyday life. I value authenticity and aim to create content that resonates deeply with my readers.</p>
+
+          <blockquote>
+            <p>"Life isn’t about finding yourself. It’s about creating yourself." – George Bernard Shaw</p>
+          </blockquote>
+
+          <p>This blog is not just about me but about us, the community we build. I hope to learn from you as much as I share. Let’s make this a space for collaboration, growth, and inspiration. Thank you for being part of my story!</p>
+
+          <div class="row">
+            <div class="col-md-4">
+              <ul>
+                <li>Passionate about creativity</li>
+                <li>Always curious and learning</li>
+              </ul>
+            </div>
+            <div class="col-md-4">
+              <ul>
+                <li>Driven by connection</li>
+                <li>Inspired by everyday moments</li>
+              </ul>
+            </div>
+            <div class="col-md-4">
+              <ul>
+                <li>Dreamer and doer</li>
+                <li>Believer in positivity</li>
+              </ul>
+            </div>
+          </div>
+
+          <p>Every story is unique, and every journey is special. This is mine, and I’m thrilled to share it with you. Let’s navigate life’s twists and turns together and find inspiration in the extraordinary and the ordinary alike.</p>
+
+        </div>
+      </article>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}
